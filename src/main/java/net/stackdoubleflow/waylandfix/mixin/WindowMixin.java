@@ -11,8 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class WindowMixin {
     @Inject(at = @At("HEAD"), method = "setIcon", cancellable = true)
     private void init(CallbackInfo info) {
-        // Once GLFW is updated to version 3.4, we can use glfwGetPlatform
-        if (GLFW.glfwGetVersionString().contains("Wayland")) {
+        if (GLFW.glfwGetPlatform() == GLFW.GLFW_PLATFORM_WAYLAND) {
             info.cancel();
         }
     }
