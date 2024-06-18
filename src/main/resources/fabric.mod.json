@@ -3,8 +3,8 @@
   "id": "waylandfix",
   "version": "${version}",
   "name": "WaylandFix",
-  "description": "",
-  "authors": [],
+  "description": "Run Minecraft natively using Wayland",
+  "authors": ["StackDoubleFlow"],
   "contact": {
     "repo": "https://github.com/stack/WaylandFix"
   },
@@ -12,14 +12,11 @@
   "icon": "assets/waylandfix/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.stackdoubleflow.waylandfix.WaylandFix"
-    ]
+    "main": []
   },
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "*"
   },
   "mixins": [
     "waylandfix.mixins.json"
